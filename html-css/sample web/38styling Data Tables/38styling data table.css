@@ -1,0 +1,44 @@
+/* Table Styles */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.col-1st {
+    width: 60%;
+}
+
+.col-2nd,
+.col-3rd {
+    width: 20%;
+}
+
+table th {
+    text-align: left;
+    background-color: rgb(221, 138, 14);
+    color: rgb(33, 33, 158);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4) ;
+   
+}
+
+table th,
+table td {
+    border: 1px solid green;
+    padding: 10px;
+}
+
+table tbody tr:nth-child(even) td {
+    background-color: rgb(245, 222, 222);
+}
+
+table tr:nth-child(odd),
+table tr:nth-child(even) {
+    text-align: center;
+}
+
+table th {
+    text-align: center;
+}
+/* End table style */

@@ -1,0 +1,196 @@
+html {
+    background-color:blanchedalmond
+   
+}
+
+img {
+    max-width: 100%;
+    font-size: auto;
+
+}
+
+/* banner overlay */
+
+.image-banner {
+    position: relative;
+    
+}
+
+.image-banner img {
+    display: block;
+}
+
+.banner-description {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color: rgb(240, 17, 55);
+    background-color: rgba(0,0,0,0.60)
+    
+}
+/* end banner overlay */ 
+
+.container {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellowgreen;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    margin-top: 20px;
+}
+
+.main-area {
+    width: 50%;
+    float: left;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 50%;
+    float: left;
+    background-color: aquamarine;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding right: 10px;
+    box-sizing:border-box;
+    font-size 85%;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 87%;
+    margin-bottom: 2px;
+    border-top: 2px solid black;
+}
+
+.content-area {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    margin-bottom: 10px;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: blue;
+    
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 165%;
+}
+
+header p {
+    margin: 0;
+}
+
+/* site navigation */
+.site-nav {
+    margin-top: 10px;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 05px;
+    margin-bottom: 10px;
+}
+
+.site-nav li {
+    list-style: none;
+    display: inline;
+    margin-right: 5px;
+    
+}
+
+.site-nav a {
+    display: inline;
+    color: blueviolet;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 3px solid blueviolet;
+   
+}
+
+/*End Navigation */
+
+
+.fix {
+    clear:both ;
+}
+
+footer {
+    text-align: center;
+    font-size: 85%;
+    color: brown;
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+    border-bottom: 2px solid black;
+}
+
+.group::before
+.group::after {
+    content: "";
+    display: table;
+
+}
+
+.group::after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+}
+
+
+/* Table Styles */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.col-1st {
+    width: 60%;
+}
+
+.col-2nd,
+.col-3rd {
+    width: 20%;
+}
+
+table th {
+    text-align: left;
+    background-color: rgb(221, 138, 14);
+    color: rgb(33, 33, 158);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4) ;
+   
+}
+
+table th,
+table td {
+    border: 1px solid green;
+    padding: 10px;
+}
+
+table tbody tr:nth-child(even) td {
+    background-color: rgb(245, 222, 222);
+}
+
+table tr:nth-child(odd),
+table tr:nth-child(even) {
+    text-align: center;
+}
+
+table th {
+    text-align: center;
+}
+/* End table style */

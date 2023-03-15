@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(175, 133, 84);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+  margin: 30px;
+}
+
+form * {
+  width: 100%;
+  height: 40px;
+  margin: 30px;
+
+  color: green;
+  background-color: rgb(170, 179, 170);
+}
+
+table {
+  margin-top: 30px;
+  width: 80%;
+}
+th {
+  background-color: rgb(73, 105, 119);
+}
+
+td {
+  background-color: rgb(121, 143, 151);
+}
+
+th,
+td {
+  border: 1px solid #000;
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+}
+
+h1 {
+  color: rgb(185, 63, 63);
+}
+
+td[onclick] {
+  background-color: rgb(252, 74, 74);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}

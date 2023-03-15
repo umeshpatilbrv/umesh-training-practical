@@ -1,0 +1,134 @@
+html {
+    background-color: yellow;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-size: 80%;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .image-banner{
+    position: relative;
+    top:10px;
+    bottom:10px;
+  }
+  .image-banner img{
+    display: block;
+  }
+
+  .banner-desc{
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:#FFF;
+    background-color: rgb(0,0,0,0.0.50);
+    padding:15px 25px;
+    
+  }
+  
+  .container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFd;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+.site-nav{
+    margin-top: 15px;
+ 
+}
+.site-nav a{
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: re;
+    border: 1px solid rgb(190, 255, 190);
+    border-radius: 10px;
+
+}
+
+.site-nav a:hover{
+    background-color: #c18;
+    border-radius: 5px;
+}
+  .site-nav ul{
+    margin: 0;
+    padding: 0;
+  }
+  /* sit navigation */
+
+  .site-nav li{
+      list-style: none;
+      float:left;
+      margin-left: 5px;
+      
+      
+  }
+  header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #6d80;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 165%;
+  }
+  
+  header p {
+    margin: 0;
+  }
+  
+  .content-area {
+    border-top: 3px solid #597714;
+    border-bottom: 3px solid #7ea12c;
+  }
+  
+  .main-area {
+    width: 66%;
+    float: left;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  
+  .sidebar {
+    width: 34%;
+    float: left;
+    background-color: #dce1e9;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    font-size: 85%;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 85%;
+    color: #999;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  
+  .fix {
+    clear: both;
+  }
+  
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  
+  .group:after {
+    clear: both;
+  }
+  
+  .group {
+    zoom: 1;
+  }

@@ -1,0 +1,26 @@
+input[type="email"]
+
+{
+    width: 50%;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 50px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    border:3px solid rgb(145, 63, 63);
+}
+input[type="submit"]
+{
+    width: 50%;
+    background-color: rgb(17, 167, 92);
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: block;
+    padding: 10px;
+    border: 1px solid rgb(128, 0, 111);
+}
+form{
+    background-color:rgb(117, 108, 108);
+    padding: 30px 40px;
+}
