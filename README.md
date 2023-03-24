@@ -1,1 +1,0 @@
-# umesh-training-practical
