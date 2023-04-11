@@ -1,0 +1,58 @@
+.pagename {
+    color: brown;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+  }
+
+  .postid {
+    color:blue;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 50px; */
+    margin-top: 30px;
+  }
+  .title {
+    /* color: blue; */
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+  }
+
+  .title2 {
+    color:brown;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .userid{
+    color:blue;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  .postid2 {
+  color:blueviolet;
+    /* font-size: 30px; */
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 50px; */
+    /* margin-top: 30px; */
+  }
+
+  .infinite-scroll-loader {
+    position: absolute;
+    bottom: -200px;
+    height: 10px;
+    width: 10px;
+  }
+  

@@ -1,0 +1,15 @@
+.button {
+  /* background-color: slateblue; */
+  display: contents;
+  justify-content: center;
+  margin: 50px;
+  color:blue;
+}
+
+.pagename {
+  color: brown;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}

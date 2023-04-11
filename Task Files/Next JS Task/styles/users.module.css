@@ -1,0 +1,105 @@
+.userlist {
+  margin: 80px;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+}
+
+.pagename {
+  color: brown;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.adduser {
+ 
+  padding: 0.5rem 0.5rem;
+  border-radius: 50px;
+  background-color: #242423;
+  border: none;
+  font-size: 30px;
+  color: white;
+  outline: none;
+ 
+  height: 50px;
+  width: 500px;
+  margin-right: 10px;
+}
+
+.adduser::placeholder {
+  color: white;
+  text-align: center;
+  opacity: 0.7;
+} 
+
+.adduserdiv{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.adduserbutton{
+  background-color:green;
+  color:black;
+}
+
+.addusername{
+  color: blue;
+  display: flex;
+justify-content: center;
+
+}
+
+/* .button {
+  font-size: 30px;
+  text-align: center;
+  background-color: lightblue;
+  color: green;
+} */
+
+.name {
+  color: brown;
+}
+
+.info {
+  color: blue;
+}
+.contentview {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.newform {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.search {
+  padding: 0.5rem 0.5rem;
+  border-radius: 50px;
+  background-color: #242423;
+  border: none;
+  font-size: 30px;
+  color: white;
+  outline: none;
+  /* display: flex; */
+  /* justify-content: center; */
+  height: 50px;
+  width: 500px;
+ 
+}
+ 
+.search::placeholder {
+  color: white;
+  text-align: center;
+  opacity: 0.7;
+} 
+
+.searchdiv {
+  display: flex;
+  justify-content: center;
+
+}

@@ -1,0 +1,36 @@
+.list {
+  margin-bottom: 70px;
+  align-items: center;
+  text-align: center;
+  /* display: inline-block; */
+  margin: 15px;
+ 
+}
+
+.title {
+  color: brown;
+}
+
+.description {
+  color: darkblue;
+}
+
+.price {
+  color: darkgreen;
+}
+
+.rating {
+  color: darkgreen;
+}
+
+.filter {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+/* .image {
+  height: 250px;
+  width:100px
+
+} */
