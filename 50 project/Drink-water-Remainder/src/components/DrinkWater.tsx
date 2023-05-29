@@ -160,7 +160,7 @@ function DrinkWater() {
           />
           <label htmlFor="250ml">250ml</label>
 
-          <input
+          {/* <input
             type="radio"
             name="cupSize"
             value="300ml"
@@ -168,7 +168,7 @@ function DrinkWater() {
             checked={cupSize === "300ml"}
             onChange={onOptionChange}
           />
-          <label htmlFor="300ml">300ml</label>
+          <label htmlFor="300ml">300ml</label> */}
 
           <input
             type="radio"
