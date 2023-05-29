@@ -8,6 +8,7 @@ function DrinkWater() {
   const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(1);
   const [btnclick, setBtnClick] = useState<boolean>(false);
+  const [duration, setDuration] = useState<number>(10); //-----------  for duration
 
   let countNumber = 1;
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function DrinkWater() {
           dispatch(
             incr2({ count: countNumber + 1, glassQuantity: glassQuantity })
           );
-        }, 1000);
+        }, duration * 1000); //--------------------- Use the duration state for interval delay
         return () => {
           clearInterval(interval);
 
@@ -40,12 +41,14 @@ function DrinkWater() {
         };
       }
     }
-  }, [countNumber, glassQuantity, isSubscribed]);
+  }, [countNumber, glassQuantity, isSubscribed, duration]); //------------------------------ Include duration in dependencies
+
   useEffect(() => {
     dispatch(selectedGlassSize(selectedGlass));
 
     dispatch(reset());
   }, [cupSize, selectedGlass, dispatch]);
+
   useEffect(() => {
     setCommittedFieldsToAdd(2000 / glassQuantity);
   }, [glassQuantity]);
@@ -53,6 +56,7 @@ function DrinkWater() {
   const onOptionChange = (e: { target: { value: string } }) => {
     setCupSize(e.target.value);
   };
+
   const handleChange = (event: { target: { checked: boolean } }) => {
     dispatch(reset());
     if (event.target.checked) {
@@ -62,6 +66,7 @@ function DrinkWater() {
       dispatch(reset());
     }
   };
+
   useEffect(() => {
     if (isSubscribed) {
       setOpacity(0.5);
@@ -69,6 +74,11 @@ function DrinkWater() {
       setOpacity(1);
     }
   }, [isSubscribed]);
+
+  const handleDurationChange = (event: { target: { value: string } }) => {
+    setDuration(parseInt(event.target.value));
+  };
+
   return (
     <>
       <div className="DrinkWater">
@@ -80,7 +90,6 @@ function DrinkWater() {
             className="percentage"
             style={{ height: `${100 - (remaining * 100) / 2000}% ` }}
           >
-            {" "}
             {100 - (remaining * 100) / 2000}%
           </div>
         </div>
@@ -114,10 +123,23 @@ function DrinkWater() {
               Set to Auto Drink:-
             </label>
           </div>
+          {isSubscribed && (
+            <div>
+              <label htmlFor="duration">
+                Duration (seconds):
+                <input
+                  type="number"
+                  id="duration"
+                  name="duration"
+                  value={duration}
+                  onChange={handleDurationChange}
+                />
+              </label>
+            </div>
+          )}
           <h3>
             <b>Select Glass Size</b>
           </h3>
-
           <input
             type="radio"
             name="cupSize"
@@ -126,7 +148,7 @@ function DrinkWater() {
             checked={cupSize === "100ml"}
             onChange={onOptionChange}
           />
-          <label htmlFor="regular">100ml</label>
+          <label htmlFor="100ml">100ml</label>
 
           <input
             type="radio"
@@ -136,18 +158,17 @@ function DrinkWater() {
             checked={cupSize === "250ml"}
             onChange={onOptionChange}
           />
-
-          <label htmlFor="regular">250ml</label>
+          <label htmlFor="250ml">250ml</label>
 
           <input
             type="radio"
             name="cupSize"
-            value="250ml"
+            value="300ml"
             id="300ml"
             checked={cupSize === "300ml"}
             onChange={onOptionChange}
           />
-          <label htmlFor="regular">300ml</label>
+          <label htmlFor="300ml">300ml</label>
 
           <input
             type="radio"
@@ -157,7 +178,7 @@ function DrinkWater() {
             checked={cupSize === "400ml"}
             onChange={onOptionChange}
           />
-          <label htmlFor="regular">400ml</label>
+          <label htmlFor="400ml">400ml</label>
 
           <input
             type="radio"
@@ -167,7 +188,7 @@ function DrinkWater() {
             checked={cupSize === "1000ml"}
             onChange={onOptionChange}
           />
-          <label htmlFor="regular">1000ml</label>
+          <label htmlFor="1000ml">1000ml</label>
         </div>
       </div>
     </>
