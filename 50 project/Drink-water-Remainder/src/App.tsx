@@ -1,5 +1,5 @@
+import DrinkWater from "../src/components/DrinkWater";
 
-import DrinkWater from "../src/components/DrinkWater"
 
 import './App.css';
 

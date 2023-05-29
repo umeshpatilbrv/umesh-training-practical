@@ -3,16 +3,18 @@ import { selectedGlassSize, reset, incr2 } from "../redux/SliceFile";
 import { useEffect, useState } from "react";
 import Glass from "./GlassFile";
 
-function DrinkWater() {
-  const [cupSize, setCupSize] = useState<string>("250ml");
-  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
-  const [opacity, setOpacity] = useState<number>(1);
-  const [btnclick, setBtnClick] = useState<boolean>(false);
-  const [duration, setDuration] = useState<number>(10); //-----------  for duration
+const DrinkWater =()=> {
+
+  const [cupSize, setCupSize] = useState<string>("250ml"); //---------- store the selected cup size and default size is 250ml
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false); //--track if auto-drink is enabled
+  const [opacity, setOpacity] = useState<number>(1); //-----------------to control the opacity of the glass
+  const [btnclick, setBtnClick] = useState<boolean>(false); //----------track button click
+  const [duration, setDuration] = useState<number>(5); //---------------store the duration for auto-drink
 
   let countNumber = 1;
   const dispatch = useDispatch();
 
+       //--------- Get remaining and glassQuantity values from Redux store-------//
   let remaining = useSelector(
     (state: { counter: { remaining: number } }) => state.counter.remaining
   );
@@ -26,38 +28,45 @@ function DrinkWater() {
   const [committedFieldsToAdd, setCommittedFieldsToAdd] = useState(8);
 
   useEffect(() => {
+       //--------- Run the effect when isSubscribed and remaining change-----------//
     if (isSubscribed && remaining > 0) {
       for (let countNumber = 0; countNumber <= 8; countNumber++) {
+
+         // ------Create an interval to dispatch incr2 action---------/
         const interval = setInterval(() => {
           countNumber++;
           dispatch(
             incr2({ count: countNumber + 1, glassQuantity: glassQuantity })
           );
-        }, duration * 1000); //--------------------- Use the duration state for interval delay
+        }, duration * 1000); //----------------Use the duration state for interval delay
+        
+        // --------Clean up the interval and reset the counter when the component unmounts---------//
         return () => {
           clearInterval(interval);
-
           dispatch(reset());
         };
       }
     }
-  }, [countNumber, glassQuantity, isSubscribed, duration]); //------------------------------ Include duration in dependencies
+  }, [countNumber, glassQuantity, isSubscribed, duration]); //---------------Include duration in dependencies
 
   useEffect(() => {
+    //-------Dispatch selectedGlassSize and reset actions when cupSize or selectedGlass change-------//
     dispatch(selectedGlassSize(selectedGlass));
-
     dispatch(reset());
   }, [cupSize, selectedGlass, dispatch]);
 
   useEffect(() => {
+    //-------- Calculate the number of fields to add based on glassQuantity-------//
     setCommittedFieldsToAdd(2000 / glassQuantity);
   }, [glassQuantity]);
 
   const onOptionChange = (e: { target: { value: string } }) => {
+     // --------Update cupSize when the radio button selection changes------//
     setCupSize(e.target.value);
   };
 
   const handleChange = (event: { target: { checked: boolean } }) => {
+    //------- Reset the counter and update isSubscribed based on checkbox change------//
     dispatch(reset());
     if (event.target.checked) {
       setIsSubscribed(true);
@@ -68,6 +77,7 @@ function DrinkWater() {
   };
 
   useEffect(() => {
+    // ---------Update opacity based on isSubscribed----//
     if (isSubscribed) {
       setOpacity(0.5);
     } else {
@@ -76,6 +86,7 @@ function DrinkWater() {
   }, [isSubscribed]);
 
   const handleDurationChange = (event: { target: { value: string } }) => {
+     //-------- Update duration when the duration input value changes-------//
     setDuration(parseInt(event.target.value));
   };
 
@@ -84,14 +95,18 @@ function DrinkWater() {
       <div className="DrinkWater">
         <div className="cup">
           <div className="remained">
-            <span className="remainSpan"> {remaining} ml Remained</span>
+            {/* {/ Display the remaining amount /} */}
+            <span className="remainSpan"> {remaining} ml Remained</span>  
           </div>
+
           <div
             className="percentage"
             style={{ height: `${100 - (remaining * 100) / 2000}% ` }}
           >
+            {/*  Display the remaining percentage  */}
             {100 - (remaining * 100) / 2000}%
           </div>
+
         </div>
         <p className="text">
           Select how many glasses of water that you have drunk
@@ -193,6 +208,7 @@ function DrinkWater() {
       </div>
     </>
   );
-}
+};
 
 export default DrinkWater;
+
